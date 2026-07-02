@@ -1,0 +1,6 @@
+[theme]
+baseFontSize = 20
+primaryColor="#613bff"
+
+[server]
+maxUploadSize = 4

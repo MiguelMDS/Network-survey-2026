@@ -1,0 +1,26 @@
+name: Keep Streamlit App Alive
+
+on:
+  schedule:
+    # Runs at minute 0 of every 10th hour. Set to 0 */12 * * * for every 12 hours.
+    - cron: '0 */10 * * *'  
+  workflow_dispatch: # Allows you to manually trigger the workflow from the GitHub UI
+
+jobs:
+  empty-commit:
+    runs-on: ubuntu-latest
+    
+    # Important: The GITHUB_TOKEN needs write permission to push commits
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create an empty commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit --allow-empty -m "Keep alive: Prevent Streamlit sleep mode"
+          git push

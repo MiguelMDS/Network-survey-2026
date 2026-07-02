@@ -1,0 +1,36 @@
+# Ignore local generated/project copy folder
+Survey_2026/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Streamlit secrets/local config
+.streamlit/secrets.toml
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+Brokerslink_Network_Survey_2026_Revised_final.txt
+Survey.html
+
+.env
+
+run_completed_companies_db_Updated.ipynb
+build_completed_companies_db_Updated.py
+
+
+# Remove all documentation files from the repo
+*.pdf
+*.docx
+*.doc
+*.csv
+*.xlsx
+*.json
+
+# Sensitive/local export artifacts (never commit)
+completed_companies_Updated.db
+extract_contacts.py
+contacts_export.json
+not_started_survey.csv
